@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Crest Resort Jalingo – 5 Star Hospitality Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#0d3b30; --green-2:#0a2e25; --gold:#b8862b; --gold-2:#d4a64a; --cream:#fbf7ef; --paper:#ffffff;
+  --ink:#1e2a26; --muted:#6b756f; --line:#e6dfcf;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Poppins",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+html{scroll-padding-top:calc(80px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+:focus-visible{outline:2px solid var(--gold-2);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.15}
+.ico{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(251,247,239,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:18px}
+.logo{display:flex;align-items:center;gap:10px}
+.logo .mark{width:42px;height:42px;color:var(--gold)}
+.logo b{display:block;font-family:var(--serif);font-size:20px;letter-spacing:.05em;color:var(--green);line-height:1}
+.logo small{display:block;font-size:8px;letter-spacing:.03em;line-height:1.3;max-width:250px;color:var(--gold);margin-top:4px}
+nav ul{display:flex;gap:20px;list-style:none}
+nav a{font-size:12.5px;padding:6px 0;border-bottom:2px solid transparent;color:var(--ink)}
+nav a.on,nav a:hover{color:var(--gold);border-color:var(--gold)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 22px;border-radius:5px;font-size:12px;font-weight:500;letter-spacing:.05em;transition:.2s}
+.btn-gold{background:var(--gold);color:#fff}.btn-gold:hover{background:#9f7220}
+.btn-ghost{border:1px solid var(--gold-2);color:var(--gold-2)}.btn-ghost:hover{background:rgba(212,166,74,.15)}
+.btn-line{border:1px solid var(--gold);color:var(--gold);padding:8px 18px}.btn-line:hover{background:var(--gold);color:#fff}
+.burger{display:none;width:42px;height:42px;border-radius:6px;border:1px solid var(--line);align-items:center;justify-content:center;font-size:20px}
+
+/* photo placeholders (swap with real photos: set background-image:url(...)) */
+.ph{background-size:cover;background-position:center;position:relative;background-color:#3a2a1a}
+.p-night{background:radial-gradient(circle at 30% 85%,rgba(255,190,90,.65),transparent 38%),radial-gradient(circle at 70% 80%,rgba(255,150,60,.5),transparent 40%),linear-gradient(180deg,#1b2a4a 0%,#3c3350 38%,#7a4a38 62%,#2a1b14 100%)}
+.p-building{background:radial-gradient(ellipse at 50% 60%,rgba(255,196,110,.9),transparent 45%),linear-gradient(180deg,#e9a56a 0%,#c0683a 30%,#8a3d2a 60%,#3a1d16 100%)}
+.p-lobby{background:radial-gradient(circle at 25% 20%,rgba(255,230,170,.8),transparent 30%),radial-gradient(circle at 75% 25%,rgba(255,230,170,.7),transparent 28%),linear-gradient(180deg,#d9c19a,#a88458 60%,#6a4a2a)}
+.p-standard{background:radial-gradient(circle at 30% 20%,rgba(255,224,160,.9),transparent 35%),linear-gradient(135deg,#c79a55,#8c5f2a 55%,#4e3216)}
+.p-exec{background:radial-gradient(circle at 50% 30%,rgba(170,40,70,.95),transparent 35%),linear-gradient(135deg,#6b3fa0,#4a2a78 55%,#2a1a48)}
+.p-deluxe{background:radial-gradient(circle at 70% 25%,rgba(255,235,190,.95),transparent 38%),linear-gradient(135deg,#d6b98c,#a98354 55%,#6d4d2c)}
+.p-hall{background:radial-gradient(circle at 50% 15%,rgba(255,220,150,.85),transparent 35%),linear-gradient(180deg,#b78d52,#7c5628 60%,#3a2812)}
+.p-bar{background:radial-gradient(circle at 25% 40%,rgba(80,120,255,.8),transparent 35%),radial-gradient(circle at 75% 55%,rgba(255,110,60,.7),transparent 35%),linear-gradient(180deg,#1b1840,#2c1f4a 55%,#140f26)}
+.p-pool{background:radial-gradient(circle at 50% 70%,rgba(80,220,240,.95),transparent 45%),linear-gradient(180deg,#1b2d44,#1f6f90 60%,#0f4a68)}
+.p-resto{background:radial-gradient(circle at 40% 30%,rgba(255,200,120,.8),transparent 38%),linear-gradient(180deg,#8a6a3e,#5e4022 60%,#2c1c0e)}
+.p-laundry{background:radial-gradient(circle at 60% 30%,rgba(230,240,255,.8),transparent 38%),linear-gradient(180deg,#8d98a8,#566170 60%,#2a323c)}
+.p-rooms{background:radial-gradient(circle at 70% 20%,rgba(255,220,150,.7),transparent 35%),linear-gradient(135deg,#7a5530,#3c2a18)}
+.p-about{background:radial-gradient(circle at 50% 60%,rgba(255,200,110,.9),transparent 45%),linear-gradient(180deg,#e0a066,#a9582f 45%,#4a2418)}
+.shade::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.65),rgba(0,0,0,.05) 60%)}
+
+/* hero */
+.hero{min-height:600px;display:flex;align-items:center;color:#fff;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,22,18,.6),rgba(6,22,18,.78))}
+.hero .wrap{position:relative;z-index:1;text-align:center;display:flex;flex-direction:column;align-items:center}
+.hero .eyebrow{font-size:11px;letter-spacing:.22em;color:var(--gold-2);margin-bottom:10px}
+.hero h1{font-size:68px;letter-spacing:.04em;margin-bottom:8px;max-width:900px}
+.hero .tag{font-size:13px;letter-spacing:.14em;color:var(--gold-2);margin-bottom:16px}
+.hero p.d{max-width:560px;color:#e8e3d6;font-size:14px;font-weight:300;margin-bottom:26px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.pagehero{min-height:230px;display:flex;align-items:center;color:#fff;position:relative}
+.pagehero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,28,22,.6),rgba(6,28,22,.82))}
+.pagehero .wrap{position:relative;text-align:center}
+.pagehero h1{font-size:44px;margin-bottom:4px}
+.pagehero p{color:#ddd6c4;font-size:14px}
+
+section.s{padding:72px 0}
+.lbl{font-size:11px;letter-spacing:.2em;color:var(--gold);margin-bottom:8px;display:block}
+.title{font-size:40px;color:var(--green);margin-bottom:14px}
+.title em{color:var(--gold);font-style:italic;font-weight:500}
+.lead{color:var(--muted);max-width:520px}
+
+/* about split */
+.split{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:center}
+.split .img{height:340px;border-radius:8px;overflow:hidden}
+.mini{display:grid;grid-template-columns:1fr 1.3fr;gap:46px;align-items:center}
+
+/* rooms */
+.rooms{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:30px}
+.rcard{border-radius:10px;overflow:hidden;background:var(--paper);border:1px solid var(--line);box-shadow:0 4px 18px rgba(30,42,38,.06);display:flex;flex-direction:column}
+.rcard .img{height:210px;display:flex;align-items:flex-end;padding:16px;color:#fff;position:relative}
+.rcard .img>*{position:relative;z-index:1}
+.rcard h3{font-size:24px;color:#fff}
+.rcard .pr{font-size:13px;color:var(--gold-2)}
+.rcard .go{margin-left:auto;width:32px;height:32px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:15px}
+.rcard .row{display:flex;align-items:flex-end;width:100%;gap:10px}
+.rcard .foot{padding:14px 16px}
+.tabs{display:flex;gap:10px;margin:26px 0 0;flex-wrap:wrap}
+.tab{padding:7px 22px;border:1px solid var(--line);border-radius:5px;font-size:12px;background:var(--paper)}
+.tab.on{background:var(--green);color:#fff;border-color:var(--green)}
+
+/* green band */
+.band{background:var(--green);color:#fff;padding:54px 0;text-align:center}
+.band h3{font-size:28px;margin-bottom:26px}
+.icons{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+.icons div{font-size:12px;color:#e8e3d6;display:flex;flex-direction:column;align-items:center;gap:10px}
+.icons .ico{font-size:30px;color:var(--gold-2)}
+.band.five .icons{grid-template-columns:repeat(5,1fr)}
+
+/* feature cta */
+.feat{min-height:340px;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;position:relative}
+.feat::before{content:"";position:absolute;inset:0;background:rgba(5,18,14,.6)}
+.feat>div{position:relative;max-width:560px;padding:20px}
+.feat h2{font-size:48px;font-style:italic;margin-bottom:10px;color:#fff}
+.feat p{color:#e8e3d6;font-size:14px;font-weight:300;margin-bottom:24px}
+
+/* facilities */
+.fgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.fcard{height:230px;border-radius:10px;overflow:hidden;display:flex;align-items:flex-end;padding:18px;color:#fff;position:relative}
+.fcard>*{position:relative;z-index:1}
+.fcard h3{font-size:24px;color:#fff;margin-bottom:6px}
+.fcard .row{display:flex;justify-content:space-between;align-items:center;width:100%}
+.fcard .link{font-size:11px;padding:5px 14px;border:1px solid var(--gold-2);border-radius:4px;color:var(--gold-2);display:inline-block}
+.fcard .arrow{width:32px;height:32px;border-radius:50%;border:1px solid var(--gold-2);color:var(--gold-2);display:flex;align-items:center;justify-content:center}
+
+/* amenities */
+.agrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.acard{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:34px 20px;text-align:center}
+.acard .ico{font-size:34px;color:var(--gold);margin-bottom:12px}
+.acard h3{font-size:22px;color:var(--green)}
+.acard p{font-size:12.5px;color:var(--muted)}
+
+/* about */
+.about-card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:22px;display:flex;gap:16px;margin-bottom:16px}
+.about-card .ico{font-size:30px;color:var(--gold);margin-top:2px}
+.about-card h3{font-size:22px;color:var(--green)}
+.about-card p{font-size:13.5px;color:var(--muted)}
+
+/* room detail */
+.detail{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;padding:48px 0}
+.detail .big{height:340px;border-radius:10px;overflow:hidden}
+.thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+.thumbs div{height:84px;border-radius:6px;cursor:pointer;border:2px solid transparent}
+.thumbs div.on{border-color:var(--gold)}
+.crumbs{font-size:12px;color:var(--muted);padding-top:20px}
+.crumbs a:hover{color:var(--gold)}
+.price{font-family:var(--serif);font-size:32px;color:var(--green);font-weight:700}
+.price small{font-family:var(--sans);font-size:12px;color:var(--muted);font-weight:400}
+.specs{margin:16px 0;font-size:13.5px;border-top:1px solid var(--line)}
+.specs div{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.specs b{font-weight:500;width:110px;color:var(--ink)}
+.specs span{color:var(--muted)}
+.am{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;margin:12px 0 22px;font-size:13.5px}
+.am div{display:flex;gap:10px;align-items:center;color:var(--muted)}
+.am .ico{color:var(--gold);font-size:18px}
+.sub{font-size:22px;color:var(--green);margin-top:22px}
+
+/* event */
+.ev{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.chk{list-style:none;display:grid;gap:10px;margin-top:12px;font-size:13.5px;color:var(--muted)}
+.chk li{display:flex;gap:10px;align-items:center}
+.chk .ico{color:var(--gold);font-size:17px}
+.form-card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:26px;margin-top:40px}
+.fld{display:grid;gap:5px;margin-bottom:14px}
+.fld label{font-size:12px;font-weight:500;color:var(--ink)}
+.fld input,.fld select,.fld textarea{font:inherit;font-size:13.5px;padding:11px 12px;border:1px solid var(--line);border-radius:6px;background:#fff;width:100%;color:var(--ink)}
+.fld textarea{min-height:90px;resize:vertical}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.three{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.ok{display:none;background:#e8f3ec;color:#165a3a;border:1px solid #b5d9c2;border-radius:6px;padding:12px 14px;font-size:13.5px;margin-top:14px}
+
+/* faq */
+.faq{max-width:820px;margin:0 auto}
+.q{border:1px solid var(--line);background:var(--paper);border-radius:6px;margin-bottom:10px}
+.q button{width:100%;text-align:left;padding:15px 18px;display:flex;justify-content:space-between;align-items:center;font-size:14px;gap:14px}
+.q .pm{font-size:18px;color:var(--gold);transition:.2s}
+.q .a{display:none;padding:0 18px 16px;color:var(--muted);font-size:13.5px}
+.q.open .a{display:block}.q.open .pm{transform:rotate(45deg)}
+
+/* gallery */
+.ggrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ggrid div{height:220px;border-radius:10px}
+
+/* footer */
+footer{background:var(--green);color:#e8e3d6;padding:56px 0 24px;margin-top:0}
+.fg{display:grid;grid-template-columns:1.4fr .8fr 1.4fr;gap:40px}
+footer .logo b{color:#fff}
+footer p.t{font-size:13px;color:#cfc9b9;margin:16px 0;max-width:260px}
+footer h4{font-family:var(--serif);font-size:19px;color:#fff;margin-bottom:14px}
+footer ul{list-style:none;display:grid;gap:8px;font-size:13px}
+footer ul a:hover{color:var(--gold-2)}
+.ct li{display:flex;gap:10px;align-items:center}
+.ct .ico{color:var(--gold-2);font-size:16px}
+.soc{display:flex;gap:10px}
+.soc a{width:32px;height:32px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px}
+.copy{border-top:1px solid rgba(255,255,255,.12);margin-top:36px;padding-top:18px;text-align:center;font-size:12px;color:#b9b4a4}
+
+/* booking modal */
+.modal{position:fixed;inset:0;background:rgba(5,16,12,.7);display:none;align-items:center;justify-content:center;z-index:100;padding:20px;overflow:auto}
+.modal.open{display:flex}
+.mbox{background:var(--green);color:#fff;border-radius:10px;width:100%;max-width:420px;padding:30px 28px;position:relative;margin:auto}
+.mbox .x{position:absolute;right:14px;top:10px;font-size:22px;color:#cfc9b9}
+.mbox .logo{flex-direction:column;gap:4px;text-align:center;margin-bottom:10px}
+.mbox .logo b{color:#fff;font-size:22px}
+.mbox h3{text-align:center;font-size:24px;color:#fff;font-family:var(--serif)}
+.mbox .sm{text-align:center;font-size:11.5px;color:#cfc9b9;margin-bottom:16px}
+.mbox input,.mbox select,.mbox textarea{font:inherit;font-size:13px;width:100%;padding:11px 12px;border-radius:5px;border:0;margin-bottom:10px;background:#fff;color:var(--ink)}
+.mbox textarea{min-height:80px}
+.mbox label{font-size:12px;display:block;margin-bottom:4px;color:#e8e3d6}
+.mbox .btn{width:100%;padding:13px}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:14px;background:rgba(255,255,255,.08);padding:4px;border-radius:7px}
+.seg button{padding:10px 8px;border-radius:5px;font-size:12.5px;color:#e8e3d6}
+.seg button.on{background:var(--gold);color:#fff}
+.mbox [hidden]{display:none}
+.mbox .ok{background:#164d3e;color:#e8f3ec;border-color:#2b6b5a}
+
+.page{display:none}.page.on{display:block}
+@media(prefers-reduced-motion:no-preference){.page.on{animation:fade .35s ease}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+
+@media(max-width:900px){
+  .burger{display:flex}
+  nav{position:absolute;left:0;right:0;top:74px;background:var(--cream);border-bottom:1px solid var(--line);display:none;padding:14px 24px}
+  nav.open{display:block}
+  nav ul{flex-direction:column;gap:6px}
+  .nav>.btn{display:none}
+  .hero h1{font-size:42px}
+  .split,.mini,.ev,.detail,.fg{grid-template-columns:1fr}
+  .rooms,.agrid,.ggrid{grid-template-columns:1fr 1fr}
+  .icons,.band.five .icons{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:600px){
+  .logo b{font-size:15px}.logo small{font-size:7px;max-width:190px}.logo .mark{width:36px;height:36px}.hero h1{font-size:34px}
+  .rooms,.agrid,.ggrid,.fgrid,.two,.three,.am{grid-template-columns:1fr}
+  .title{font-size:32px}.pagehero h1{font-size:34px}.feat h2{font-size:36px}
+  section.s{padding:52px 0}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-crown" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 31l-2-12 8 6 6-9 6 9 8-6-2 12z" fill="currentColor" opacity=".9"/><path d="M13 35h22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2 8.8a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r=".8"/></symbol>
+    <symbol id="i-power" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></symbol>
+    <symbol id="i-park" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></symbol>
+    <symbol id="i-ac" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="8" rx="2"/><path d="M7 16c0 2-1 3-1 4M12 16v4M17 16c0 2 1 3 1 4"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M3 18h18M5 18a7 7 0 0 1 14 0M12 8V5M10 5h4"/></symbol>
+    <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 18V7M3 14h18v4M21 14v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="11" r="2"/></symbol>
+    <symbol id="i-tv" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+    <symbol id="i-bath" viewBox="0 0 24 24"><path d="M3 12h18v3a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4zM6 12V6a2 2 0 0 1 4 0M6 19l-1 2M18 19l1 2"/></symbol>
+    <symbol id="i-desk" viewBox="0 0 24 24"><path d="M3 8h18M5 8v12M19 8v12M5 14h14"/></symbol>
+    <symbol id="i-hall" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1"/><path d="M3 9h18M8 4v16M16 4v16"/></symbol>
+    <symbol id="i-glass" viewBox="0 0 24 24"><path d="M6 3h12l-1 8a5 5 0 0 1-10 0zM12 16v5M8 21h8"/></symbol>
+    <symbol id="i-pool" viewBox="0 0 24 24"><path d="M2 18c2 0 2-1.5 5-1.5S9 18 12 18s2-1.5 5-1.5S19 18 22 18M2 22c2 0 2-1.5 5-1.5S9 22 12 22s2-1.5 5-1.5S19 22 22 22M8 14V5a2 2 0 0 1 4 0M16 14V5a2 2 0 0 0-4 0M8 9h8"/></symbol>
+    <symbol id="i-fork" viewBox="0 0 24 24"><path d="M7 3v8M4 3v5a3 3 0 0 0 6 0V3M7 11v10M17 3c-2 2-3 5-3 8h3v10"/></symbol>
+    <symbol id="i-wash" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="14" r="4"/><path d="M8 7h.01M11 7h.01"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></symbol>
+    <symbol id="i-fb" viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8.5A.5.5 0 0 1 14 8z"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="17" cy="7" r=".6"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M5 4l14 16M19 4L5 20"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/><path d="M9 9c0 3 3 6 6 6l1-1.5-2-1-1 .8c-1-.5-1.8-1.3-2.3-2.3l.8-1-1-2z"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8M5 10v10h14V10"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-4 3-6 7-6s7 2 7 6M17 5a3.5 3.5 0 0 1 0 7M22 20c0-3-2-5-5-5.5"/></symbol>
+    <symbol id="i-cake" viewBox="0 0 24 24"><path d="M4 12h16v8H4zM4 16c3 2 5-2 8 0s5-2 8 0M12 12V8M12 5v.01"/></symbol>
+    <symbol id="i-brief" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V4h6v3M3 13h18"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-8-5-8-11a4.5 4.5 0 0 1 8-2.5A4.5 4.5 0 0 1 20 9c0 6-8 11-8 11z"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-gem" viewBox="0 0 24 24"><path d="M6 4h12l4 6-10 11L2 10zM2 10h20M9 4l-2 6 5 11 5-11-2-6"/></symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap nav">
+    <a href="#/" class="logo" aria-label="Crest Resort Jalingo home">
+      <svg class="mark"><use href="#i-crown"/></svg>
+      <span><b>CREST RESORT JALINGO</b><small>5 Star Hospitality Services right in the heart of Jalingo City, Taraba State</small></span>
+    </a>
+    <nav id="nav" aria-label="Main">
+      <ul>
+        <li><a href="#/" data-nav="home">Home</a></li>
+        <li><a href="#/rooms" data-nav="rooms">Rooms</a></li>
+        <li><a href="#/facilities" data-nav="facilities">Facilities</a></li>
+        <li><a href="#/event-hall" data-nav="event-hall">Event Hall</a></li>
+        <li><a href="#/gallery" data-nav="gallery">Gallery</a></li>
+        <li><a href="#/about" data-nav="about">About</a></li>
+        <li><a href="#contact" data-scroll="contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="btn btn-gold" data-book>BOOK NOW</button>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main>
+<!-- 1 HOME -->
+<div class="page" id="p-home">
+  <div class="hero ph p-night">
+    <div class="wrap">
+      <div class="eyebrow">WELCOME TO</div>
+      <h1>CREST RESORT JALINGO</h1>
+      <div class="tag">5 Star Hospitality Services right in the heart of Jalingo City, Taraba State</div>
+      <p class="d">Experience world-class hospitality in the heart of Jalingo. Enjoy modern accommodation, exquisite dining, premium facilities and a serene environment for your every stay.</p>
+      <div class="cta">
+        <button class="btn btn-gold" data-book>BOOK A ROOM</button>
+        <a class="btn btn-ghost" href="#/facilities">EXPLORE FACILITIES</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="s">
+    <div class="wrap mini">
+      <div>
+        <span class="lbl">ABOUT CREST RESORT JALINGO</span>
+        <h2 class="title">A Premier Resort<br><em>in Jalingo</em></h2>
+        <p class="lead" style="margin-bottom:20px">Crest Resort Jalingo is a full-service resort with comfortable rooms, a restaurant, lounge bar, swimming pool and event hall. We bring 5 star hospitality to every guest and every occasion, right in the heart of Jalingo City.</p>
+        <a class="btn btn-line" href="#/about">LEARN MORE</a>
+      </div>
+      <div class="ph p-lobby" style="height:260px;border-radius:8px"></div>
+    </div>
+  </section>
+
+  <section class="s" style="padding-top:0">
+    <div class="wrap">
+      <span class="lbl">OUR ROOMS</span>
+      <h2 class="title">Comfortable Rooms<br><em>for Every Guest</em></h2>
+      <p class="lead">Choose from our range of well-appointed rooms designed for comfort, style and relaxation.</p>
+      <div class="rooms" data-rooms></div>
+      <div style="margin-top:22px"><a class="btn btn-line" href="#/rooms">VIEW ALL ROOMS</a></div>
+    </div>
+  </section>
+
+  <div class="band five">
+    <div class="wrap">
+      <span class="lbl" style="color:var(--gold-2)">OUR FACILITIES & SERVICES</span>
+      <h3>World-Class Facilities</h3>
+      <div class="icons">
+        <div><svg class="ico"><use href="#i-bed"/></svg>Accommodation</div>
+        <div><svg class="ico"><use href="#i-hall"/></svg>Event Hall</div>
+        <div><svg class="ico"><use href="#i-glass"/></svg>Lounge Bar</div>
+        <div><svg class="ico"><use href="#i-pool"/></svg>Swimming Pool</div>
+        <div><svg class="ico"><use href="#i-fork"/></svg>Restaurant</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="feat ph p-night">
+    <div>
+      <h2>Luxury Awaits</h2>
+      <p>Whether you're here for business, leisure or a special occasion, Crest Resort Jalingo is your home away from home. Let us make your stay unforgettable.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <button class="btn btn-gold" data-book>BOOK NOW</button>
+        <button class="btn btn-ghost" data-book="hall">PLAN AN EVENT</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 2 ROOMS -->
+<div class="page" id="p-rooms">
+  <div class="pagehero ph p-rooms"><div class="wrap"><h1>Our Rooms</h1><p>Comfort, elegance and relaxation</p></div></div>
+  <section class="s" style="padding-top:36px">
+    <div class="wrap">
+      <div class="tabs" id="roomTabs">
+        <button class="tab on" data-f="all">All Rooms</button>
+        <button class="tab" data-f="standard">Standard</button>
+        <button class="tab" data-f="executive">Executive</button>
+        <button class="tab" data-f="deluxe">Deluxe</button>
+      </div>
+      <div class="rooms" data-rooms id="roomsAll"></div>
+    </div>
+  </section>
+  <div class="band">
+    <div class="wrap">
+      <h3>Your Stay Includes</h3>
+      <div class="icons">
+        <div><svg class="ico"><use href="#i-wifi"/></svg>Free Wi-Fi</div>
+        <div><svg class="ico"><use href="#i-power"/></svg>24 Hour Power</div>
+        <div><svg class="ico"><use href="#i-park"/></svg>Secure Parking</div>
+        <div><svg class="ico"><use href="#i-shield"/></svg>Maximum Security</div>
+        <div><svg class="ico"><use href="#i-ac"/></svg>Air Conditioning</div>
+        <div><svg class="ico"><use href="#i-bell"/></svg>Room Service</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 3 ROOM DETAIL -->
+<div class="page" id="p-room">
+  <div class="pagehero ph" id="rdHero"><div class="wrap"><h1 id="rdName"></h1><p id="rdTag"></p></div></div>
+  <div class="wrap">
+    <div class="crumbs"><a href="#/">Home</a> › <a href="#/rooms">Rooms</a> › <span id="rdCrumb"></span></div>
+    <div class="detail">
+      <div>
+        <div class="big ph" id="rdBig"></div>
+        <div class="thumbs" id="rdThumbs"></div>
+      </div>
+      <div>
+        <div class="price" id="rdPrice"></div>
+        <button class="btn btn-gold" style="width:100%;margin:12px 0" data-book="room" id="rdBook">Book Now</button>
+        <div class="specs">
+          <div><b>Bed Type:</b><span id="rdBed"></span></div>
+          <div><b>Max Guests:</b><span id="rdGuests"></span></div>
+          <div><b>Room Size:</b><span id="rdSize"></span></div>
+        </div>
+        <h3 class="sub" style="margin-top:0">Room Amenities</h3>
+        <div class="am">
+          <div><svg class="ico"><use href="#i-wifi"/></svg>Free Wi-Fi</div>
+          <div><svg class="ico"><use href="#i-ac"/></svg>Air Conditioning</div>
+          <div><svg class="ico"><use href="#i-tv"/></svg>Flat Screen TV</div>
+          <div><svg class="ico"><use href="#i-bath"/></svg>En-suite Bathroom</div>
+          <div><svg class="ico"><use href="#i-bell"/></svg>Room Service</div>
+          <div><svg class="ico"><use href="#i-desk"/></svg>Working Desk</div>
+        </div>
+        <p style="color:var(--muted);font-size:13.5px" id="rdDesc"></p>
+        <p style="margin-top:18px"><a href="#/rooms" style="color:var(--gold);font-size:13px">← Back to Rooms</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 4 FACILITIES -->
+<div class="page" id="p-facilities">
+  <div class="pagehero ph p-lobby"><div class="wrap"><h1>Our Facilities</h1><p>Relax, Dine, Unwind</p></div></div>
+  <section class="s" style="padding-top:40px">
+    <div class="wrap fgrid">
+      <div class="fcard ph p-standard shade"><div class="row"><div><h3>Accommodation</h3><a class="link" href="#/rooms">View Rooms</a></div><span class="arrow">→</span></div></div>
+      <div class="fcard ph p-hall shade"><div class="row"><div><h3>Event Hall</h3><a class="link" href="#/event-hall/enquire">Enquire Now</a></div><span class="arrow">→</span></div></div>
+      <div class="fcard ph p-bar shade"><div class="row"><div><h3>Lounge Bar</h3><button class="link" data-svc="lounge">Make Enquiry</button></div><span class="arrow">→</span></div></div>
+      <div class="fcard ph p-pool shade"><div class="row"><div><h3>Swimming Pool</h3><button class="link" data-svc="pool">Request Access</button></div><span class="arrow">→</span></div></div>
+      <div class="fcard ph p-resto shade"><div class="row"><div><h3>Restaurant</h3><button class="link" data-svc="restaurant">Order / Reserve</button></div><span class="arrow">→</span></div></div>
+      <div class="fcard ph p-laundry shade"><div class="row"><div><h3>Laundry Services</h3><button class="link" data-svc="laundry">Request Service</button></div><span class="arrow">→</span></div></div>
+    </div>
+  </section>
+</div>
+
+<!-- 5 EVENT HALL -->
+<div class="page" id="p-event-hall">
+  <div class="pagehero ph p-hall"><div class="wrap"><h1>Event Hall</h1><p>Perfect for all occasions</p></div></div>
+  <section class="s" style="padding-top:44px">
+    <div class="wrap">
+      <div class="ev">
+        <div>
+          <h3 class="sub" style="margin-top:0">Hall Features</h3>
+          <ul class="chk">
+            <li><svg class="ico"><use href="#i-check"/></svg>Spacious and well-decorated hall</li>
+            <li><svg class="ico"><use href="#i-check"/></svg>Modern sound system</li>
+            <li><svg class="ico"><use href="#i-check"/></svg>Air conditioning</li>
+            <li><svg class="ico"><use href="#i-check"/></svg>Flexible seating arrangements</li>
+            <li><svg class="ico"><use href="#i-check"/></svg>Catering services</li>
+            <li><svg class="ico"><use href="#i-check"/></svg>Ample parking space</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="sub" style="margin-top:0">Suitable for</h3>
+          <ul class="chk">
+            <li><svg class="ico"><use href="#i-heart"/></svg>Weddings</li>
+            <li><svg class="ico"><use href="#i-mic"/></svg>Conferences</li>
+            <li><svg class="ico"><use href="#i-cake"/></svg>Birthdays</li>
+            <li><svg class="ico"><use href="#i-brief"/></svg>Corporate Events</li>
+            <li><svg class="ico"><use href="#i-glass"/></svg>Private Parties</li>
+            <li><svg class="ico"><use href="#i-users"/></svg>Social Gatherings</li>
+          </ul>
+        </div>
+      </div>
+      <div style="margin-top:30px"><button class="btn btn-gold" data-book="hall">BOOK THE EVENT HALL</button></div>
+      <div class="form-card">
+        <h3 class="sub" style="margin:0 0 16px">Enquire About Our Event Hall</h3>
+        <form id="evForm" novalidate>
+          <div class="two">
+            <div class="fld"><label for="ev1">Full Name</label><input id="ev1" required></div>
+            <div class="fld"><label for="ev2">Phone Number</label><input id="ev2" type="tel" required></div>
+          </div>
+          <div class="three">
+            <div class="fld"><label for="ev3">Event Type</label><select id="ev3"><option value="">Event Type</option><option>Wedding</option><option>Conference</option><option>Birthday</option><option>Corporate Event</option><option>Private Party</option><option>Social Gathering</option></select></div>
+            <div class="fld"><label for="ev4">Expected Date</label><input id="ev4" type="date"></div>
+            <div class="fld"><label for="ev5">Number of Guests</label><input id="ev5" type="number" min="1"></div>
+          </div>
+          <div class="fld"><label for="ev6">Additional Request (optional)</label><textarea id="ev6"></textarea></div>
+          <button class="btn btn-gold" style="width:100%" type="submit">Submit Enquiry</button>
+          <div class="ok" id="evOk">Thank you. Your enquiry has been received and our team will contact you shortly.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- 6 GALLERY -->
+<div class="page" id="p-gallery">
+  <div class="pagehero ph p-night"><div class="wrap"><h1>Gallery</h1><p>A glimpse of Crest Resort Jalingo</p></div></div>
+  <section class="s" style="padding-top:40px"><div class="wrap ggrid">
+    <div class="ph p-building"></div><div class="ph p-lobby"></div><div class="ph p-standard"></div>
+    <div class="ph p-exec"></div><div class="ph p-hall"></div><div class="ph p-bar"></div>
+    <div class="ph p-pool"></div><div class="ph p-resto"></div><div class="ph p-laundry"></div>
+  </div></section>
+</div>
+
+<!-- 7 AMENITIES -->
+<div class="page" id="p-amenities">
+  <div class="pagehero ph p-night"><div class="wrap"><h1>Hotel Amenities</h1><p>More Than Just a Stay</p></div></div>
+  <section class="s" style="padding-top:40px"><div class="wrap agrid">
+    <div class="acard"><svg class="ico"><use href="#i-wifi"/></svg><h3>Free Wi-Fi</h3><p>High-speed internet access</p></div>
+    <div class="acard"><svg class="ico"><use href="#i-power"/></svg><h3>24 Hour Power</h3><p>Uninterrupted power supply</p></div>
+    <div class="acard"><svg class="ico"><use href="#i-park"/></svg><h3>Secure Parking</h3><p>Safe and spacious parking</p></div>
+    <div class="acard"><svg class="ico"><use href="#i-shield"/></svg><h3>Maximum Security</h3><p>24/7 surveillance and security</p><button class="btn btn-line" data-svc="security" style="margin-top:14px;padding:7px 16px;font-size:11px">Report to Security</button></div>
+    <div class="acard"><svg class="ico"><use href="#i-ac"/></svg><h3>Air Conditioning</h3><p>Cool and comfortable rooms</p></div>
+    <div class="acard"><svg class="ico"><use href="#i-bell"/></svg><h3>Room Service</h3><p>At your convenience</p></div>
+  </div></section>
+</div>
+
+<!-- 8 ABOUT -->
+<div class="page" id="p-about">
+  <div class="pagehero ph p-lobby"><div class="wrap"><h1>About Crest Resort Jalingo</h1><p>Our Story, Our Commitment</p></div></div>
+  <section class="s" style="padding-top:44px"><div class="wrap">
+    <div class="split">
+      <div>
+        <span class="lbl" style="font-size:13px;letter-spacing:0"><em style="font-family:var(--serif);font-size:26px;color:var(--gold);font-style:normal;font-weight:600">A Premier Resort in Jalingo</em></span>
+        <p class="lead" style="margin:10px 0 14px">Crest Resort Jalingo brings 5 star hospitality services to the heart of Jalingo City, Taraba State. We are more than a place to sleep: a full resort where you can stay in comfortable rooms, dine in our restaurant, unwind at the lounge bar and swimming pool, and celebrate in our event hall.</p>
+        <p class="lead" style="margin:0 0 24px">Whether you are travelling for business, relaxing with family or planning a wedding, everything you need is in one secure, welcoming place, with reliable power, strong security and a team that puts your comfort first.</p>
+        <div class="about-card"><svg class="ico"><use href="#i-target"/></svg><div><h3>Our Mission</h3><p>To deliver 5 star hospitality in every part of the resort, from a warm welcome at the door to a smooth, comfortable stay, so every guest and every occasion is well cared for.</p></div></div>
+        <div class="about-card"><svg class="ico"><use href="#i-eye"/></svg><div><h3>Our Vision</h3><p>To be the first-choice resort in Jalingo and across Taraba State for leisure, business and celebrations.</p></div></div>
+        <div class="about-card"><svg class="ico"><use href="#i-gem"/></svg><div><h3>Our Values</h3><p>Comfort &nbsp;|&nbsp; Integrity &nbsp;|&nbsp; Excellence &nbsp;|&nbsp; Customer Focus</p></div></div>
+      </div>
+      <div class="img ph p-about" style="height:420px"></div>
+    </div>
+  </div></section>
+  <div class="band">
+    <div class="wrap">
+      <h3>Everything You Need, in One Resort</h3>
+      <div class="icons">
+        <div><svg class="ico"><use href="#i-bed"/></svg>Accommodation</div>
+        <div><svg class="ico"><use href="#i-fork"/></svg>Restaurant</div>
+        <div><svg class="ico"><use href="#i-glass"/></svg>Lounge Bar</div>
+        <div><svg class="ico"><use href="#i-pool"/></svg>Swimming Pool</div>
+        <div><svg class="ico"><use href="#i-hall"/></svg>Event Hall</div>
+        <div><svg class="ico"><use href="#i-wash"/></svg>Laundry Services</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 9 FAQ -->
+<div class="page" id="p-faq">
+  <div class="pagehero ph p-lobby"><div class="wrap"><h1>Frequently Asked Questions</h1><p>Find answers to common questions</p></div></div>
+  <section class="s" style="padding-top:44px"><div class="wrap faq" id="faqList"></div></section>
+</div>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="fg">
+      <div>
+        <a href="#/" class="logo"><svg class="mark" style="color:var(--gold-2)"><use href="#i-crown"/></svg><span><b>CREST RESORT JALINGO</b><small style="color:var(--gold-2)">5 Star Hospitality Services right in the heart of Jalingo City, Taraba State</small></span></a>
+        <p class="t">More than just a place to stay, Crest Resort Jalingo is your home away from home in Jalingo.</p>
+        <div class="soc">
+          <a href="#" aria-label="Facebook"><svg class="ico"><use href="#i-fb"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg class="ico"><use href="#i-ig"/></svg></a>
+          <a href="#" aria-label="X"><svg class="ico"><use href="#i-x"/></svg></a>
+          <a href="#" aria-label="WhatsApp"><svg class="ico"><use href="#i-wa"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#/">Home</a></li><li><a href="#/rooms">Rooms</a></li><li><a href="#/facilities">Facilities</a></li>
+          <li><a href="#/event-hall">Event Hall</a></li><li><a href="#/gallery">Gallery</a></li><li><a href="#/about">About</a></li>
+          <li><a href="#/amenities">Amenities</a></li><li><a href="#/faq">FAQ</a></li><li><a href="#" data-svc="security">Security Report</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul class="ct">
+          <li><svg class="ico"><use href="#i-phone"/></svg><a href="tel:+2349063968892">+234 906 396 8892</a></li>
+          <li><svg class="ico"><use href="#i-phone"/></svg><a href="tel:+2349077704113">+234 907 770 4113</a></li>
+          <li><svg class="ico"><use href="#i-mail"/></svg><a href="mailto:info@cresthotel.com.ng">info@cresthotel.com.ng</a></li>
+          <li><svg class="ico"><use href="#i-mail"/></svg><a href="mailto:booking@cresthotel.com.ng">booking@cresthotel.com.ng</a></li>
+          <li><svg class="ico"><use href="#i-pin"/></svg>Jalingo, Taraba State</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">© 2025 Crest Resort Jalingo. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- 11 BOOKING MODAL -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="bkTitle">
+  <div class="mbox">
+    <button class="x" id="mClose" aria-label="Close">×</button>
+    <div class="logo"><svg class="mark" style="color:var(--gold-2)"><use href="#i-crown"/></svg><b>CREST RESORT JALINGO</b><small style="color:var(--gold-2)">5 Star Hospitality Services right in the heart of Jalingo City, Taraba State</small></div>
+    <h3 id="bkTitle">Make a Reservation</h3>
+    <p class="sm" id="bkSub">Book a room or the event hall in a few simple steps.</p>
+    <form id="bkForm" novalidate>
+      <div class="seg" role="group" aria-label="What would you like to book?">
+        <button type="button" class="on" data-kind="room" aria-pressed="true">Book a Room</button>
+        <button type="button" data-kind="hall" aria-pressed="false">Book Event Hall</button>
+      </div>
+      <input id="b1" placeholder="Full Name" aria-label="Full Name" required>
+      <input id="b2" type="tel" placeholder="Phone Number" aria-label="Phone Number" required>
+      <input id="b3" type="email" placeholder="Email Address" aria-label="Email Address">
+      <div id="grpRoom">
+        <select id="b4" aria-label="Select Room Type"><option value="">Select Room Type</option><option value="standard">Standard Room</option><option value="executive">Executive Room</option><option value="deluxe">Deluxe Room</option></select>
+        <label for="b5">Check In Date</label><input id="b5" type="date">
+        <label for="b6">Check Out Date</label><input id="b6" type="date">
+        <select id="b7" aria-label="Number of Guests"><option value="">Number of Guests</option><option>1 Guest</option><option>2 Guests</option><option>3 Guests</option><option>4+ Guests</option></select>
+      </div>
+      <div id="grpHall" hidden>
+        <select id="h1" aria-label="Event Type"><option value="">Select Event Type</option><option>Wedding</option><option>Conference</option><option>Birthday</option><option>Corporate Event</option><option>Private Party</option><option>Social Gathering</option></select>
+        <label for="h2">Event Date</label><input id="h2" type="date">
+        <select id="h4" aria-label="Time of Day"><option value="">Select Time of Day</option><option>Morning</option><option>Afternoon</option><option>Evening</option><option>Full day</option></select>
+        <input id="h3" type="number" min="1" placeholder="Expected Number of Guests" aria-label="Expected Number of Guests">
+      </div>
+      <textarea id="b8" placeholder="Special Request (optional)" aria-label="Special Request"></textarea>
+      <button class="btn btn-gold" type="submit" id="bkSubmit">Submit Booking</button>
+      <div class="ok" id="bkOk"></div>
+    </form>
+  </div>
+</div>
+
+<div class="modal" id="svcModal" role="dialog" aria-modal="true" aria-labelledby="svcTitle">
+  <div class="mbox">
+    <button class="x" id="svcClose" aria-label="Close">×</button>
+    <div class="logo"><svg class="mark" style="color:var(--gold-2)"><use href="#i-crown"/></svg><b>CREST RESORT JALINGO</b></div>
+    <h3 id="svcTitle"></h3>
+    <p class="sm" id="svcSub"></p>
+    <form id="svcForm" novalidate></form>
+  </div>
+</div>
+
+<script>
+const ROOMS = {
+  standard:{name:"Standard Room",price:"₦25,000",cls:"p-standard",bed:"Queen Bed",guests:"2 Adults",size:"25 m²",tag:"Comfort at an honest price",
+    desc:"Our Standard Room offers warm, practical comfort with everything you need for a restful stay, from a comfortable bed to a quiet working corner."},
+  executive:{name:"Executive Room",price:"₦40,000",cls:"p-exec",bed:"King Bed",guests:"2 Adults",size:"35 m²",tag:"Elegance in Every Detail",
+    desc:"Our Executive Room offers a perfect blend of comfort, style and modern luxury. Enjoy a peaceful stay with premium amenities designed to make your visit unforgettable."},
+  deluxe:{name:"Deluxe Room",price:"₦60,000",cls:"p-deluxe",bed:"King Bed",guests:"2 Adults + 1 Child",size:"45 m²",tag:"Space, style and serenity",
+    desc:"Our Deluxe Room is our most spacious option, with a generous layout, refined furnishings and a relaxed seating area for extra comfort."}
+};
+const FAQS = [
+ ["Can I book a hotel room directly through the website?","Yes. Use the Book Now button, fill in your details and submit. Our team will confirm your reservation shortly."],
+ ["Do you need a credit card to make a reservation?","No credit card is required to submit a booking request. Payment details are confirmed with our reservations team."],
+ ["What are the check-in and check-out times?","Check-in starts at 2:00 PM and check-out is by 12:00 noon. Early check-in or late check-out can be arranged on request."],
+ ["Is breakfast included in the room rate?","Breakfast options depend on the room and package. Please ask our reservations team when booking."],
+ ["Do you offer airport transfers or shuttle services?","We can arrange transport on request. Contact us with your arrival details and we will help."],
+ ["Are there any cancellation fees?","Cancellation terms depend on the booking. Please contact us as early as possible to change or cancel."],
+ ["Is there an on-site restaurant or dining options available?","Yes. Our restaurant and lounge bar serve guests throughout the day."],
+ ["Are pets allowed in the hotel?","Pets are not allowed in the rooms. Please contact us if you have a special case."],
+ ["Can I modify or change my reservation?","Yes. Call or email our reservations team with your booking details and the changes you need."],
+ ["Are there any spa or wellness facilities at the hotel?","We have a swimming pool for guests. Contact us to ask about other wellness options."]
+];
+
+const $ = (s,r=document)=>r.querySelector(s), $$ = (s,r=document)=>[...r.querySelectorAll(s)];
+
+/* ---------- WHO RECEIVES WHAT ----------
+   Each request type goes to its own WhatsApp number (country code, no + or spaces).
+   Replace the numbers below with each department's real WhatsApp line. */
+const MAIN='2349063968892';
+const RECEIVERS={
+  room:      {name:'Hotel Reception',      wa:MAIN},
+  hall:      {name:'Event Hall Reception', wa:MAIN},
+  lounge:    {name:'Bar Reception',        wa:MAIN},
+  pool:      {name:'Pool Attendant',       wa:MAIN},
+  restaurant:{name:'Restaurant Reception', wa:MAIN},
+  laundry:   {name:'Laundry Reception',    wa:MAIN},
+  security:  {name:'Security Unit',        wa:MAIN}
+};
+function deliver(dept,heading,pairs,okEl){
+  const R=RECEIVERS[dept];
+  const lines=['*'+heading+'*','Crest Resort Jalingo website',''].concat(
+    pairs.filter(p=>p[1]&&String(p[1]).trim()).map(p=>p[0]+': '+String(p[1]).trim()));
+  const url='https://wa.me/'+R.wa+'?text='+encodeURIComponent(lines.join('\n'));
+  okEl.innerHTML='Thank you. Your request is ready for <b>'+R.name+'</b>. WhatsApp will open with your details: press send to deliver it. <a href="'+url+'" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Open WhatsApp</a> if it did not open.';
+  okEl.style.display='block';
+  try{window.open(url,'_blank','noopener')}catch(_){}
+}
+const selText=id=>{const el=$(id);return el.tagName==='SELECT'&&el.selectedOptions[0]?el.selectedOptions[0].text:el.value};
+
+/* rooms cards */
+function roomCard(k){const r=ROOMS[k];return `<article class="rcard" data-k="${k}"><a href="#/room/${k}" class="img ph ${r.cls} shade" aria-label="${r.name}"><div class="row"><div><h3>${r.name}</h3><div class="pr">${r.price} / night</div></div><span class="go">→</span></div></a><div class="foot"><a class="btn btn-line" href="#/room/${k}" style="padding:7px 16px;font-size:11px">View Details</a></div></article>`}
+$$('[data-rooms]').forEach(el=>el.innerHTML=Object.keys(ROOMS).map(roomCard).join(''));
+$('#roomTabs').addEventListener('click',e=>{const b=e.target.closest('.tab');if(!b)return;$$('.tab').forEach(t=>t.classList.toggle('on',t===b));const f=b.dataset.f;$$('#roomsAll .rcard').forEach(c=>c.style.display=(f==='all'||c.dataset.k===f)?'':'none')});
+
+/* faq */
+$('#faqList').innerHTML=FAQS.map((f,i)=>`<div class="q"><button aria-expanded="false" aria-controls="fa${i}"><span>${f[0]}</span><span class="pm">+</span></button><div class="a" id="fa${i}">${f[1]}</div></div>`).join('');
+$('#faqList').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const q=b.parentElement;const o=q.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+
+/* router */
+const PAGES=['home','rooms','room','facilities','event-hall','gallery','amenities','about','faq'];
+function route(){
+  const h=location.hash||'#/';
+  if(h==='#contact'){$('#contact').scrollIntoView();return}
+  const parts=h.replace('#/','').split('/');
+  let p=parts[0]||'home';
+  if(!PAGES.includes(p))p='home';
+  if(p==='room'){
+    const r=ROOMS[parts[1]]||ROOMS.executive;
+    $('#rdBook').dataset.book='room:'+(ROOMS[parts[1]]?parts[1]:'executive');
+    $('#rdName').textContent=r.name;$('#rdTag').textContent=r.tag;$('#rdCrumb').textContent=r.name;
+    $('#rdPrice').innerHTML=r.price+' <small>/ night</small>';
+    $('#rdBed').textContent=r.bed;$('#rdGuests').textContent=r.guests;$('#rdSize').textContent=r.size;$('#rdDesc').textContent=r.desc;
+    $('#rdHero').className='pagehero ph '+r.cls;
+    $('#rdBig').className='big ph '+r.cls;
+    const alt=[r.cls,'p-lobby','p-standard'];
+    $('#rdThumbs').innerHTML=alt.map((c,i)=>`<div class="ph ${c} ${i===0?'on':''}" data-c="${c}"></div>`).join('');
+    $('#rdThumbs').onclick=e=>{const t=e.target.closest('[data-c]');if(!t)return;$$('#rdThumbs div').forEach(d=>d.classList.toggle('on',d===t));$('#rdBig').className='big ph '+t.dataset.c};
+  }
+  $$('.page').forEach(el=>el.classList.toggle('on',el.id==='p-'+p));
+  const navKey=p==='room'?'rooms':(p==='amenities'||p==='faq'?'':p);
+  $$('[data-nav]').forEach(a=>a.classList.toggle('on',a.dataset.nav===navKey));
+  $('#nav').classList.remove('open');$('#burger').setAttribute('aria-expanded','false');
+  if(p==='event-hall'&&parts[1]==='enquire'){setTimeout(()=>$('#evForm').scrollIntoView({block:'center'}),60)}else{window.scrollTo(0,0)}
+}
+addEventListener('hashchange',route);route();
+
+/* mobile menu */
+$('#burger').onclick=()=>{const o=$('#nav').classList.toggle('open');$('#burger').setAttribute('aria-expanded',o)};
+$$('[data-scroll]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();$('#nav').classList.remove('open');$('#contact').scrollIntoView()}));
+
+/* facility-specific request forms */
+const T=(id,label,req)=>({id,label,type:'text',req}),
+      P=(id,label,req)=>({id,label,type:'tel',req}),
+      D=(id,label)=>({id,label,type:'date'}),
+      TM=(id,label)=>({id,label,type:'time'}),
+      N=(id,label)=>({id,label,type:'number'}),
+      S=(id,label,opts,req)=>({id,label,type:'select',opts,req}),
+      A=(id,label,req)=>({id,label,type:'textarea',req});
+const SVC={
+  lounge:{title:'Lounge Bar Enquiry',sub:'Reserve a table, plan a private party or ask about our drinks menu.',btn:'Send Enquiry',
+    ok:'Thank you. Your lounge bar enquiry has been received and our team will contact you shortly.',
+    fields:[T('name','Full Name',1),P('phone','Phone Number',1),S('type','Enquiry Type',['Table reservation','Private party','Drinks and menu','Other'],1),D('date','Preferred Date'),TM('time','Preferred Time'),N('guests','Number of Guests'),A('msg','Message (optional)')]},
+  pool:{title:'Swimming Pool Access Request',sub:'Tell us when you would like to swim and we will confirm your slot.',btn:'Request Access',
+    ok:'Thank you. Your pool access request has been received. We will confirm your slot shortly.',
+    fields:[T('name','Full Name',1),P('phone','Phone Number',1),S('guest','Guest Type',['Resident guest','Non-resident guest'],1),D('date','Visit Date'),S('slot','Time Slot',['Morning','Afternoon','Evening']),N('swimmers','Number of Swimmers'),A('msg','Special Request (optional)')]},
+  restaurant:{title:'Restaurant: Order or Reserve',sub:'Reserve a table or place an order for dine-in, room delivery or take-away.',btn:'Submit Request',
+    ok:'Thank you. Your restaurant request has been received and our team will confirm it shortly.',
+    fields:[T('name','Full Name',1),P('phone','Phone Number',1),S('type','Request Type',['Reserve a table','Order: dine-in','Order: room delivery','Order: take-away'],1),T('room','Room Number (for room delivery)'),D('date','Date'),TM('time','Time'),N('guests','Number of Guests'),A('msg','Your order or special request')]},
+  security:{title:'Security Report',sub:'Report an incident or concern to our security unit. For an urgent emergency, please also alert reception immediately.',btn:'Send Report',
+    fields:[S('type','Type of Report',['Suspicious activity','Theft or loss','Safety hazard','Noise or disturbance','Other'],1),T('where','Location (room number or area)',1),TM('time','Time of incident'),A('msg','What happened?',1),T('name','Your Name (optional)'),P('phone','Phone Number (optional)')]},
+  laundry:{title:'Laundry Service Request',sub:'Tell us what needs cleaning and when we should collect it.',btn:'Request Service',
+    ok:'Thank you. Your laundry request has been received. We will arrange collection shortly.',
+    fields:[T('name','Full Name',1),P('phone','Phone Number',1),T('room','Room Number'),S('type','Service Type',['Wash and fold','Dry cleaning','Ironing only','Express service'],1),D('date','Pick-up Date'),TM('time','Pick-up Time'),A('msg','Items and notes (e.g. number of pieces)')]}
+};
+const svcModal=$('#svcModal'),svcForm=$('#svcForm');
+function openSvc(k){
+  const c=SVC[k];if(!c)return;
+  $('#svcTitle').textContent=c.title;$('#svcSub').textContent=c.sub;
+  svcForm.dataset.k=k;
+  svcForm.innerHTML=c.fields.map(f=>{
+    const id='sv_'+f.id,L=`<label for="${id}">${f.label}${f.req?' *':''}</label>`;
+    if(f.type==='select')return L+`<select id="${id}"><option value="">Select</option>${f.opts.map(o=>`<option>${o}</option>`).join('')}</select>`;
+    if(f.type==='textarea')return L+`<textarea id="${id}"></textarea>`;
+    return L+`<input id="${id}" type="${f.type}"${f.type==='number'?' min="1"':''}>`;
+  }).join('')+`<button class="btn btn-gold" type="submit">${c.btn}</button><div class="ok" id="svcOk"></div>`;
+  svcModal.classList.add('open');
+  setTimeout(()=>$('#sv_name').focus(),50);
+}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-svc]');if(b){e.preventDefault();$('#nav').classList.remove('open');openSvc(b.dataset.svc)}});
+$('#svcClose').onclick=()=>svcModal.classList.remove('open');
+svcModal.addEventListener('click',e=>{if(e.target===svcModal)svcModal.classList.remove('open')});
+svcForm.addEventListener('submit',e=>{
+  e.preventDefault();
+  const c=SVC[svcForm.dataset.k];let ok=true;
+  c.fields.filter(f=>f.req).forEach(f=>{const el=$('#sv_'+f.id);const v=el.value.trim();el.style.outline=v?'':'2px solid #d9534f';if(!v)ok=false});
+  if(!ok)return;
+  const k=svcForm.dataset.k;
+  deliver(k,c.title,c.fields.map(f=>[f.label.replace(/ \(.*\)$/,''),selText('#sv_'+f.id)]),$('#svcOk'));
+  $$('#svcForm input,#svcForm select,#svcForm textarea').forEach(el=>{el.value='';el.style.outline=''});
+});
+
+/* booking modal */
+const modal=$('#modal');
+let bkKind='room';
+function setKind(k){
+  bkKind=k;
+  $$('.seg button').forEach(b=>{const on=b.dataset.kind===k;b.classList.toggle('on',on);b.setAttribute('aria-pressed',on)});
+  $('#grpRoom').hidden=k!=='room';$('#grpHall').hidden=k!=='hall';
+  $('#bkSubmit').textContent=k==='room'?'Submit Room Booking':'Submit Event Hall Booking';
+  $('#bkOk').style.display='none';
+}
+function openBook(spec){
+  const [k,room]=(spec||'room').split(':');
+  const today=new Date().toISOString().slice(0,10);
+  ['#b5','#b6','#h2'].forEach(id=>$(id).min=today);
+  setKind(k==='hall'?'hall':'room');
+  if(room&&ROOMS[room])$('#b4').value=room;
+  modal.classList.add('open');setTimeout(()=>$('#b1').focus(),50);
+}
+$$('.seg button').forEach(b=>b.addEventListener('click',()=>setKind(b.dataset.kind)));
+$('#b5').addEventListener('change',()=>{$('#b6').min=$('#b5').value||new Date().toISOString().slice(0,10)});
+function closeBook(){modal.classList.remove('open')}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-book]');if(b)openBook(b.dataset.book)});
+$('#mClose').onclick=closeBook;
+modal.addEventListener('click',e=>{if(e.target===modal)closeBook()});
+addEventListener('keydown',e=>{if(e.key==='Escape'){closeBook();svcModal.classList.remove('open')}});
+function wire(formId,okId,required){
+  $(formId).addEventListener('submit',e=>{e.preventDefault();
+    const ok=required.every(id=>$(id).value.trim());
+    if(!ok){required.forEach(id=>$(id).style.outline=$(id).value.trim()?'':'2px solid #d9534f');return}
+    required.forEach(id=>$(id).style.outline='');
+    $(okId).style.display='block';$(formId).reset();
+  });
+}
+$('#bkForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const need=['#b1','#b2'].concat(bkKind==='room'?['#b4','#b5','#b6']:['#h1','#h2']);
+  let ok=true;
+  need.forEach(id=>{const el=$(id),v=el.value.trim();el.style.outline=v?'':'2px solid #d9534f';if(!v)ok=false});
+  const msg=$('#bkOk');
+  if(ok&&bkKind==='room'&&$('#b6').value<=$('#b5').value){$('#b6').style.outline='2px solid #d9534f';ok=false;msg.textContent='Check out date must be after check in date.';msg.style.display='block';return}
+  if(!ok){msg.style.display='none';return}
+  const common=[['Name',$('#b1').value],['Phone',$('#b2').value],['Email',$('#b3').value]];
+  if(bkKind==='room')deliver('room','New Room Booking',common.concat([['Room type',selText('#b4')],['Check-in',$('#b5').value],['Check-out',$('#b6').value],['Guests',$('#b7').value],['Special request',$('#b8').value]]),msg);
+  else deliver('hall','New Event Hall Booking',common.concat([['Event type',$('#h1').value],['Event date',$('#h2').value],['Time of day',$('#h4').value],['Expected guests',$('#h3').value],['Special request',$('#b8').value]]),msg);
+  $('#bkForm').reset();$$('#bkForm input,#bkForm select').forEach(el=>el.style.outline='');
+});
+$('#evForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  let ok=true;['#ev1','#ev2'].forEach(id=>{const el=$(id),v=el.value.trim();el.style.outline=v?'':'2px solid #d9534f';if(!v)ok=false});
+  if(!ok)return;
+  deliver('hall','Event Hall Enquiry',[['Name',$('#ev1').value],['Phone',$('#ev2').value],['Event type',$('#ev3').value],['Expected date',$('#ev4').value],['Guests',$('#ev5').value],['Request',$('#ev6').value]],$('#evOk'));
+  $('#evForm').reset();
+});
+</script>
+</body>
+</html>
